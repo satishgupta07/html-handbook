@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Headings & Paragraphs</title>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: Headings (h1–h6)
+      ============================================================
+      HTML has 6 levels of headings, h1 (most important) to h6 (least).
+      They define the page's outline — like chapters and sub-sections
+      in a book. Search engines and screen readers use this hierarchy
+      to understand page structure.
+
+      Rule of thumb:
+        - One <h1> per page (the main title).
+        - Use h2/h3/... in order. Don't skip levels for styling —
+          use CSS for size, headings are for STRUCTURE.
+      ============================================================
+    -->
+    <h1>This is a Heading 1 (page title)</h1>
+    <h2>This is a Heading 2 (section)</h2>
+    <h3>This is a Heading 3 (sub-section)</h3>
+    <h4>This is a Heading 4</h4>
+    <h5>This is a Heading 5</h5>
+    <h6>This is a Heading 6 (smallest)</h6>
+
+    <hr />
+    <!-- <hr> is a horizontal rule — a thematic divider between sections -->
+
+    <!--
+      ============================================================
+      CONCEPT: Paragraphs and line breaks
+      ============================================================
+      <p>   → a paragraph of text. Browsers add space above and below.
+      <br>  → a single line break inside a paragraph (self-closing).
+      Multiple spaces / line breaks in source code COLLAPSE into one space.
+      ============================================================
+    -->
+    <p>This is a paragraph. It can span many lines in the source code,
+       but the browser collapses extra whitespace and renders it as
+       continuous text.</p>
+
+    <p>
+      First line of the address.<br />
+      Second line<br />
+      City, State 12345
+    </p>
+
+    <p>The pre tag below preserves whitespace EXACTLY as written:</p>
+    <pre>
+      Line 1
+        indented line 2
+      Line 3
+    </pre>
+  </body>
+</html>

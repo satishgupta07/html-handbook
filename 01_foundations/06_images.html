@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Images & Figures</title>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: The <img> tag
+      ============================================================
+      <img> is a self-closing (void) element. Required attributes:
+        src  → path to the image (relative or absolute URL)
+        alt  → alternative text shown if image fails to load,
+               and read aloud by screen readers (ACCESSIBILITY).
+                 - Decorative image? → alt=""  (empty, intentionally)
+                 - Informative image? → describe what it shows.
+
+      Optional but recommended:
+        width / height → reserve space so layout doesn't jump
+                         while image loads. Use intrinsic pixel sizes.
+        loading="lazy" → defer offscreen images until user scrolls.
+      ============================================================
+    -->
+
+    <h2>Basic Image</h2>
+    <img
+      src="https://picsum.photos/400/250"
+      alt="Random placeholder photo"
+      width="400"
+      height="250"
+    />
+
+    <h2>Image as a Link</h2>
+    <!-- Wrap an <img> in <a> to make it clickable. -->
+    <a href="https://picsum.photos" target="_blank" rel="noopener noreferrer">
+      <img
+        src="https://picsum.photos/200/120"
+        alt="Click to visit picsum.photos"
+        width="200"
+        height="120"
+      />
+    </a>
+
+    <h2>Lazy-loaded image</h2>
+    <img
+      src="https://picsum.photos/400/250?random=2"
+      alt="Lazy loaded placeholder"
+      width="400"
+      height="250"
+      loading="lazy"
+    />
+
+    <h2>Figure with caption</h2>
+    <!--
+      <figure> groups visual content with its caption (<figcaption>).
+      Use it for diagrams, photos, code samples — anything that's
+      "pulled aside" from the main flow but still part of the content.
+    -->
+    <figure>
+      <img
+        src="https://picsum.photos/400/250?random=3"
+        alt="A scenic landscape"
+        width="400"
+        height="250"
+      />
+      <figcaption>Fig 1. A randomly chosen landscape from picsum.photos</figcaption>
+    </figure>
+
+    <h2>Responsive image with srcset</h2>
+    <!--
+      srcset gives the browser multiple image sources. The browser
+      picks the best one based on screen size / pixel density.
+      "1x" / "2x" → for retina/high-DPI displays.
+    -->
+    <img
+      src="https://picsum.photos/400/250?random=4"
+      srcset="
+        https://picsum.photos/400/250?random=4 1x,
+        https://picsum.photos/800/500?random=4 2x
+      "
+      alt="Adapts to screen pixel density"
+      width="400"
+      height="250"
+    />
+  </body>
+</html>

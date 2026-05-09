@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Text Formatting</title>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: Text-level (inline) formatting
+      ============================================================
+      These tags don't break onto a new line — they style text
+      INSIDE a paragraph. Most have semantic meaning (not just visual).
+      Use them for MEANING; use CSS for purely visual effects.
+      ============================================================
+    -->
+
+    <h2>Emphasis & Importance</h2>
+    <p>
+      <strong>Bold/important text</strong> uses &lt;strong&gt;.<br />
+      <b>Visually bold (no extra meaning)</b> uses &lt;b&gt;.<br />
+      <em>Emphasized/italic text</em> uses &lt;em&gt;.<br />
+      <i>Visually italic (no extra meaning)</i> uses &lt;i&gt;.
+    </p>
+    <!--
+      strong vs b, em vs i:
+        strong/em add semantic weight (screen readers stress them).
+        b/i are purely visual. Prefer strong/em in modern HTML.
+    -->
+
+    <h2>Marked, Small, Deleted, Inserted</h2>
+    <p>
+      <mark>Highlighted text</mark> with &lt;mark&gt;.<br />
+      <small>Small print / disclaimer</small> with &lt;small&gt;.<br />
+      <del>Deleted/struck-through text</del> with &lt;del&gt;.<br />
+      <ins>Inserted/underlined text</ins> with &lt;ins&gt;.
+    </p>
+
+    <h2>Subscript & Superscript</h2>
+    <p>Water is H<sub>2</sub>O.</p>
+    <p>Einstein: E = mc<sup>2</sup>.</p>
+
+    <h2>Code, Keyboard, Sample Output</h2>
+    <p>
+      Run <code>git status</code> to view changes.<br />
+      Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.<br />
+      The output: <samp>fatal: not a git repository</samp>
+    </p>
+
+    <h2>Quotes</h2>
+    <p>Inline short quote: <q>HTML is awesome</q> — said someone.</p>
+    <blockquote cite="https://example.com">
+      A blockquote is for longer, block-level quotations.
+      It's typically indented by browsers.
+    </blockquote>
+
+    <h2>Abbreviation</h2>
+    <p>
+      <abbr title="HyperText Markup Language">HTML</abbr> is the
+      backbone of the web. Hover the abbreviation to see the full form.
+    </p>
+  </body>
+</html>

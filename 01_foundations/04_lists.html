@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lists</title>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: HTML has 3 list types
+      ============================================================
+      <ul>  Unordered list  → bullets, order doesn't matter
+      <ol>  Ordered list    → numbers/letters, order matters
+      <dl>  Description list → name/value pairs (term + definition)
+
+      Both <ul> and <ol> contain <li> (list items).
+      <dl> contains <dt> (term) and <dd> (description).
+      ============================================================
+    -->
+
+    <h2>Unordered List (ul)</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <h2>Ordered List (ol)</h2>
+    <ol>
+      <li>Wake up</li>
+      <li>Brush teeth</li>
+      <li>Code</li>
+    </ol>
+
+    <!-- ol attributes:
+         type="A"     → A, B, C
+         type="a"     → a, b, c
+         type="I"     → I, II, III
+         type="i"     → i, ii, iii
+         start="5"    → start counting from 5
+         reversed     → count down -->
+    <h2>Ordered List with Roman numerals, starting at 3</h2>
+    <ol type="I" start="3">
+      <li>Third</li>
+      <li>Fourth</li>
+      <li>Fifth</li>
+    </ol>
+
+    <h2>Nested List</h2>
+    <ul>
+      <li>Frontend
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript
+            <ol>
+              <li>Variables</li>
+              <li>Functions</li>
+              <li>DOM</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+      <li>Backend</li>
+    </ul>
+
+    <h2>Description List (dl)</h2>
+    <dl>
+      <dt>HTML</dt>
+      <dd>The standard markup language for the web.</dd>
+
+      <dt>CSS</dt>
+      <dd>The language for styling web pages.</dd>
+
+      <dt>JavaScript</dt>
+      <dd>The language that adds interactivity to web pages.</dd>
+    </dl>
+  </body>
+</html>

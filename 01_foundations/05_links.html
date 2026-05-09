@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Links & Anchors</title>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: The <a> (anchor) tag
+      ============================================================
+      <a href="...">  → "anchor" — creates a hyperlink.
+      The href attribute holds the destination URL.
+
+      target attribute:
+        _self   → open in same tab (default)
+        _blank  → open in NEW tab (always pair with rel="noopener noreferrer"
+                  for security — prevents the new page from controlling the opener)
+      ============================================================
+    -->
+
+    <h2>External Link</h2>
+    <p>
+      Visit <a href="https://developer.mozilla.org" target="_blank"
+              rel="noopener noreferrer">MDN Web Docs</a>.
+    </p>
+
+    <h2>Internal (Relative) Link</h2>
+    <!--
+      Relative paths point to files within the same project.
+        ./file.html      → same folder
+        ../file.html     → one folder up
+        sub/file.html    → into a subfolder
+    -->
+    <p>Go back to <a href="01_first_page.html">step 1</a>.</p>
+
+    <h2>Email & Phone Links</h2>
+    <p>
+      Email: <a href="mailto:hello@example.com?subject=Hi">hello@example.com</a><br />
+      Phone: <a href="tel:+15551234567">+1 (555) 123-4567</a>
+    </p>
+
+    <h2>Download Link</h2>
+    <p>
+      The <code>download</code> attribute tells the browser to download
+      the file instead of navigating:
+    </p>
+    <p><a href="01_first_page.html" download>Download the first HTML file</a></p>
+
+    <h2>Anchor Links (jumping within the page)</h2>
+    <!--
+      An "id" gives an element a unique name within the page.
+      A link to "#name" jumps to the element with that id.
+    -->
+    <p>Jump to: <a href="#section-bottom">bottom section</a></p>
+
+    <div style="height: 600px; background: #f0f0f0; padding: 1rem;">
+      Scroll down... (filler content to demonstrate jumping)
+    </div>
+
+    <h2 id="section-bottom">You jumped here!</h2>
+    <p><a href="#top">Back to top</a> (works because every page has an
+       implicit <code>#top</code> anchor).</p>
+  </body>
+</html>
