@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tables — Basics</title>
+    <style>
+      table { border-collapse: collapse; margin-bottom: 1.5rem; }
+      th, td { border: 1px solid #444; padding: 6px 12px; }
+      th { background: #f0f0f0; }
+      caption { caption-side: bottom; font-style: italic; padding-top: 4px; }
+    </style>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: HTML Tables
+      ============================================================
+      Tables show TABULAR data — rows and columns of related values.
+      DON'T use tables for page layout (that's what CSS Grid/Flexbox is for).
+
+      Anatomy:
+        <table>    → the whole table
+        <caption>  → title of the table (good for accessibility)
+        <tr>       → table row
+        <th>       → header cell (bold, semantic header)
+        <td>       → data cell
+
+      border-collapse: collapse → merges adjacent borders into one line.
+      Without it, every cell shows its own border (double lines).
+      ============================================================
+    -->
+
+    <h2>Simple Table</h2>
+    <table>
+      <caption>Top 3 frontend languages</caption>
+      <tr>
+        <th>Language</th>
+        <th>Year</th>
+        <th>Created by</th>
+      </tr>
+      <tr>
+        <td>HTML</td>
+        <td>1993</td>
+        <td>Tim Berners-Lee</td>
+      </tr>
+      <tr>
+        <td>CSS</td>
+        <td>1996</td>
+        <td>Håkon Wium Lie</td>
+      </tr>
+      <tr>
+        <td>JavaScript</td>
+        <td>1995</td>
+        <td>Brendan Eich</td>
+      </tr>
+    </table>
+
+    <!--
+      For accessibility, real-world tables should also use
+      <thead>, <tbody>, <tfoot> — covered in the next file.
+    -->
+  </body>
+</html>

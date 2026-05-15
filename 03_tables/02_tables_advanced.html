@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tables — Advanced</title>
+    <style>
+      table { border-collapse: collapse; margin-bottom: 1.5rem; min-width: 400px; }
+      th, td { border: 1px solid #444; padding: 6px 12px; text-align: left; }
+      thead { background: #2c3e50; color: white; }
+      tfoot { background: #f0f0f0; font-weight: bold; }
+      tbody tr:nth-child(even) { background: #fafafa; }
+    </style>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: Structured tables + cell merging
+      ============================================================
+      Group rows into:
+        <thead>  → column headers
+        <tbody>  → main data rows
+        <tfoot>  → totals / summary
+
+      Merge cells:
+        colspan="N"  → cell stretches across N columns
+        rowspan="N"  → cell stretches across N rows
+
+      Tip for accessibility:
+        <th scope="col">  → this header labels a column
+        <th scope="row">  → this header labels a row
+      ============================================================
+    -->
+
+    <h2>Sales Report (with thead / tbody / tfoot)</h2>
+    <table>
+      <caption>Q1 2026 Sales</caption>
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Jan</th>
+          <th scope="col">Feb</th>
+          <th scope="col">Mar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Laptops</th>
+          <td>120</td>
+          <td>150</td>
+          <td>200</td>
+        </tr>
+        <tr>
+          <th scope="row">Phones</th>
+          <td>300</td>
+          <td>320</td>
+          <td>410</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">Total</th>
+          <td>420</td>
+          <td>470</td>
+          <td>610</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <h2>colspan & rowspan</h2>
+    <table>
+      <tr>
+        <th colspan="3">Schedule</th>
+        <!-- one cell stretching across 3 columns -->
+      </tr>
+      <tr>
+        <td rowspan="2">Morning</td>
+        <!-- this cell spans down 2 rows -->
+        <td>Mon</td>
+        <td>Standup</td>
+      </tr>
+      <tr>
+        <!-- no first cell here — "Morning" is rowspanning into this row -->
+        <td>Tue</td>
+        <td>1:1s</td>
+      </tr>
+      <tr>
+        <td>Evening</td>
+        <td>All week</td>
+        <td>Code review</td>
+      </tr>
+    </table>
+  </body>
+</html>
