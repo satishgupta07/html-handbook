@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>div vs span</title>
+    <style>
+      .box   { border: 1px solid #444; padding: 8px; margin: 8px 0; }
+      .pill  { background: #ffd6e8; padding: 2px 8px; border-radius: 999px; }
+    </style>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: <div> vs <span> vs semantic tags
+      ============================================================
+      <div>  → BLOCK element. Takes the full width by default and
+               starts on a new line. Generic container.
+
+      <span> → INLINE element. Only as wide as its content. Sits
+               in the same line as surrounding text. Generic wrapper.
+
+      Both have NO semantic meaning. They are styling/grouping hooks only.
+
+      Rule of thumb:
+        - Use a semantic tag (<header>, <nav>, <article>...) FIRST.
+        - Fall back to <div>/<span> only when no semantic tag fits.
+
+      Block vs inline visual demo →
+      ============================================================
+    -->
+
+    <h2>div is block-level (stacks vertically)</h2>
+    <div class="box">First div — takes full width.</div>
+    <div class="box">Second div — also full width, on a new line.</div>
+
+    <h2>span is inline (flows with text)</h2>
+    <p>
+      Your status is
+      <span class="pill">active</span>
+      and your role is
+      <span class="pill">admin</span>.
+      Both spans sit inline with the surrounding sentence.
+    </p>
+
+    <h2>BAD: using divs everywhere</h2>
+    <!-- Avoid this! No semantics, nothing for screen readers to announce. -->
+    <div class="header"><div class="title">My Site</div></div>
+    <div class="nav">
+      <div><a href="#">Home</a></div>
+      <div><a href="#">About</a></div>
+    </div>
+
+    <h2>GOOD: semantic tags + minimal divs</h2>
+    <header><h1>My Site</h1></header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
