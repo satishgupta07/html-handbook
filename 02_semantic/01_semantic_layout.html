@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Semantic Layout</title>
+    <style>
+      /* a tiny bit of CSS just to visualise the regions */
+      body { font-family: sans-serif; margin: 0; }
+      header, nav, main, aside, section, article, footer {
+        padding: 1rem;
+        margin: 0.5rem;
+        border: 2px dashed #888;
+      }
+      header  { background: #fde4e4; }
+      nav     { background: #fff5d6; }
+      main    { background: #e4fde9; }
+      aside   { background: #e4f0fd; }
+      article { background: #f5e4fd; }
+      footer  { background: #eee; }
+      nav ul  { list-style: none; padding: 0; display: flex; gap: 1rem; }
+    </style>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: Semantic HTML
+      ============================================================
+      A <div> is invisible to screen readers and SEO — it has no meaning.
+      Semantic tags TELL the browser/assistive tech what each region is for.
+
+      Common landmark tags:
+        <header>   → top of the page or a section (logo, page title)
+        <nav>      → main navigation links
+        <main>     → the page's MAIN content (only ONE per page)
+        <section>  → thematic group of content (usually with its own heading)
+        <article>  → self-contained, reusable piece (blog post, product card)
+        <aside>    → sidebar / tangential content
+        <footer>   → bottom of the page or a section
+
+      Why bother?
+        - Better SEO (search engines understand structure)
+        - Better accessibility (screen readers can jump by landmark)
+        - Cleaner, more readable code
+      ============================================================
+    -->
+
+    <header>
+      <h1>My Tech Blog</h1>
+      <p>Writings about HTML, CSS and JavaScript</p>
+    </header>
+
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <header>
+          <h2>What is Semantic HTML?</h2>
+          <p>Posted on <time datetime="2026-05-08">May 8, 2026</time></p>
+        </header>
+
+        <section>
+          <h3>Introduction</h3>
+          <p>Semantic HTML uses tags that describe their meaning...</p>
+        </section>
+
+        <section>
+          <h3>Why it matters</h3>
+          <p>It helps browsers, search engines and assistive technologies.</p>
+        </section>
+
+        <footer>
+          <p>Tags: html, semantic, accessibility</p>
+        </footer>
+      </article>
+
+      <aside>
+        <h3>Related Posts</h3>
+        <ul>
+          <li><a href="#">CSS Box Model Explained</a></li>
+          <li><a href="#">JavaScript Closures</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 My Tech Blog. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
