@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Forms — Basics</title>
+    <style>
+      form { max-width: 360px; padding: 1rem; border: 1px solid #ccc; }
+      label { display: block; margin-top: 0.75rem; }
+      input, button { display: block; margin-top: 0.25rem; padding: 0.5rem;
+                      width: 100%; box-sizing: border-box; }
+      button { margin-top: 1rem; background: #2c3e50; color: white;
+               border: none; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: HTML Forms
+      ============================================================
+      Forms collect user input and send it somewhere.
+
+      <form>      → wraps the inputs.
+        action="..."   URL where data is sent (server endpoint).
+        method="get"   appends data to the URL (search, filters)
+        method="post"  sends data in the body (login, signup, sensitive data)
+
+      <input>     → a single field. The "type" attribute changes its kind.
+      <label>     → describes the field. Linking it to an input
+                    (via for=id) lets users click the label to focus the
+                    input — also crucial for screen readers.
+      <button>    → submits the form (default type="submit").
+
+      The "name" attribute on inputs is what gets sent to the server.
+      Without "name", the field's value is NOT submitted.
+      ============================================================
+    -->
+
+    <h2>Login Form</h2>
+    <form action="/login" method="post">
+      <!-- "for" matches the input's "id" — this links label & input. -->
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="e.g. satish_k" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" />
+
+      <button type="submit">Log in</button>
+    </form>
+
+    <!--
+      Try it:
+        - Open in browser, fill the form, hit submit.
+        - The URL will navigate to /login. Since no real server is
+          listening, you'll see a "page not found" — but that proves
+          the form works. The values were sent in the request body.
+    -->
+  </body>
+</html>
