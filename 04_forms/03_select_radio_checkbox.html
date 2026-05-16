@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Select, Textarea, Radio, Checkbox</title>
+    <style>
+      form { max-width: 460px; padding: 1rem; border: 1px solid #ccc; }
+      fieldset { margin-top: 1rem; }
+      legend { font-weight: 600; }
+      textarea { width: 100%; box-sizing: border-box; padding: 0.4rem; }
+      label { display: block; margin: 0.4rem 0; }
+    </style>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: More form controls
+      ============================================================
+      <textarea>      → multi-line text. Size set with rows/cols or CSS.
+      <select>        → dropdown. Use <option> for choices.
+                        Add multiple to allow multi-select.
+                        Group options with <optgroup>.
+      Radio buttons   → <input type="radio">. Group by SAME "name"
+                        attribute → user can pick exactly one.
+      Checkboxes      → <input type="checkbox">. Independent — pick any.
+
+      <fieldset>+<legend> visually & semantically group related controls
+      (great for screen readers).
+      ============================================================
+    -->
+
+    <form>
+      <label for="bio">Bio (textarea)</label>
+      <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself"></textarea>
+
+      <label for="country">Country (select dropdown)</label>
+      <select id="country" name="country">
+        <option value="">-- Choose one --</option>
+        <optgroup label="Asia">
+          <option value="in">India</option>
+          <option value="jp" selected>Japan</option>
+          <!-- selected → pre-selected on page load -->
+        </optgroup>
+        <optgroup label="Europe">
+          <option value="de">Germany</option>
+          <option value="fr">France</option>
+        </optgroup>
+      </select>
+
+      <label for="skills">Skills (multi-select — Ctrl/Cmd+click)</label>
+      <select id="skills" name="skills" multiple size="4">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+        <option value="ts">TypeScript</option>
+      </select>
+
+      <fieldset>
+        <legend>Preferred contact (radio — pick one)</legend>
+        <!-- All three share name="contact" so they're a group. -->
+        <label><input type="radio" name="contact" value="email" checked /> Email</label>
+        <label><input type="radio" name="contact" value="phone" /> Phone</label>
+        <label><input type="radio" name="contact" value="none" /> Don't contact me</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Topics you care about (checkbox — pick many)</legend>
+        <label><input type="checkbox" name="topics" value="html" /> HTML</label>
+        <label><input type="checkbox" name="topics" value="css" /> CSS</label>
+        <label><input type="checkbox" name="topics" value="js" /> JavaScript</label>
+      </fieldset>
+
+      <button type="submit">Save</button>
+    </form>
+  </body>
+</html>
