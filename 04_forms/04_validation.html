@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Validation</title>
+    <style>
+      form { max-width: 420px; padding: 1rem; border: 1px solid #ccc; }
+      label { display: block; margin-top: 0.75rem; font-weight: 600; }
+      input { display: block; margin-top: 0.25rem; padding: 0.4rem;
+              width: 100%; box-sizing: border-box; }
+      /* :invalid styles fields that fail validation */
+      input:invalid { border-color: #c0392b; }
+      input:valid   { border-color: #27ae60; }
+      small { color: #666; }
+    </style>
+  </head>
+  <body>
+    <!--
+      ============================================================
+      CONCEPT: Native HTML validation
+      ============================================================
+      The browser can validate fields before submitting — no JS needed.
+
+      Common attributes:
+        required           → field cannot be empty
+        minlength / maxlength  → string length
+        min / max / step   → numeric/date ranges
+        pattern="regex"    → must match the regex
+        type="email"/"url" → built-in format validation
+
+      CSS pseudo-classes :valid / :invalid let you style fields based
+      on their validation state.
+
+      IMPORTANT: HTML validation is a UX convenience. ALWAYS validate
+      again on the server — users can bypass HTML by editing the page.
+      ============================================================
+    -->
+
+    <h2>Sign-up form (with validation)</h2>
+    <form>
+      <label for="name">Full name (required, 3–40 chars)</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        minlength="3"
+        maxlength="40"
+      />
+
+      <label for="email">Email (required, must be valid format)</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="age">Age (18–99)</label>
+      <input type="number" id="age" name="age" min="18" max="99" required />
+
+      <label for="zip">ZIP code (5 digits — pattern)</label>
+      <input
+        type="text"
+        id="zip"
+        name="zip"
+        pattern="\d{5}"
+        title="Exactly 5 digits"
+        required
+      />
+      <small>The "title" text is shown if the pattern fails.</small>
+
+      <label for="pwd">Password (8+ chars, 1 letter + 1 number)</label>
+      <input
+        type="password"
+        id="pwd"
+        name="pwd"
+        required
+        minlength="8"
+        pattern="(?=.*[A-Za-z])(?=.*\d).{8,}"
+        title="At least 8 characters, including 1 letter and 1 number"
+      />
+
+      <button type="submit">Create account</button>
+    </form>
+  </body>
+</html>
